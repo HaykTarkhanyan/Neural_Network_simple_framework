@@ -4,6 +4,11 @@ import numpy as np
 # will be able to fit to more complex data
 # also for bringing inputs to desired range like from 0-1 for classification
 
+# https://www.coursera.org/learn/neural-networks-deep-learning/
+# lecture/4dDC1/activation-functions
+# https://www.coursera.org/learn/neural-networks-deep-learning/lecture/OASKH/
+# why-do-you-need-non-linear-activation-functions
+
 
 def sigmoid_forward(z):
     """
