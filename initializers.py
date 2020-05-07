@@ -30,7 +30,7 @@ def zeros_initializer(n_x, n_y):
     return w, b
 
 
-def uniform_initilizer(n_x, n_y):
+def uniform_initializer(n_x, n_y):
     """
     Initilizes randomly with values from uniform distribution
 
@@ -48,7 +48,7 @@ def uniform_initilizer(n_x, n_y):
     return w, b
 
 
-def normal_initilizer(n_x, n_y):
+def normal_initializer(n_x, n_y):
     """
     Initilizes randomly with values from Gaussian distribution
 
@@ -66,7 +66,7 @@ def normal_initilizer(n_x, n_y):
     return w, b
 
 
-def he_initilizer(n_x, n_y, size_prev_layer):
+def he_initializer(n_x, n_y, size_prev_layer):
     """
     just as other initilizers but scaled by a factor of -
      sqrt(2 / #num of neurons in previous layer)
@@ -89,7 +89,7 @@ def he_initilizer(n_x, n_y, size_prev_layer):
     return w, b
 
 
-def xavier_initilizer(n_x, n_y, size_prev_layer):
+def xavier_initializer(n_x, n_y, size_prev_layer):
     """
     just as "He" but with 1 instead of 2, best suited with tanh activation
      sqrt(1 / #num of neurons in previous layer)
