@@ -69,10 +69,10 @@ def zeros_initializer(n_x, n_y):
 
     Returns:
     Weights matrix - numpy array with shape (n_x, n_y)
-    Bias vector - numpy array with shape (n_y, 1)
+    Bias vector - numpy array with shape (1, n_y)
     """
     w = np.zeros((n_x, n_y))
-    b = np.zeros((n_y, 1))
+    b = np.zeros((1, n_y))
 
     return w, b
 
@@ -87,10 +87,10 @@ def uniform_initializer(n_x, n_y):
 
     Returns:
     Weights matrix - numpy array with shape (n_x, n_y)
-    Bias vector - numpy array with shape (n_y, 1)
+    Bias vector - numpy array with shape (1, n_y)
     """
     w = np.random.random((n_x, n_y))
-    b = np.random.random((n_y, 1))
+    b = np.random.random((1, n_y))
 
     return w, b
 
@@ -105,15 +105,15 @@ def normal_initializer(n_x, n_y):
 
     Returns:
     Weights matrix - numpy array with shape (n_x, n_y)
-    Bias vector - numpy array with shape (n_y, 1)
+    Bias vector - numpy array with shape (1, n_y)
     """
     w = np.random.randn(n_x, n_y)
-    b = np.random.randn(n_y, 1)
+    b = np.random.randn(1, n_y)
 
     return w, b
 
 
-def he_initializer(n_x, n_y, size_prev_layer):
+def he_initializer(n_x, n_y):
     """
     just as other initilizers but scaled by a factor of -
      sqrt(2 / #num of neurons in previous layer)
@@ -128,12 +128,12 @@ def he_initializer(n_x, n_y, size_prev_layer):
 
     Returns:
     Weights matrix - numpy array with shape (n_x, n_y)
-    Bias vector - numpy array with shape (n_y, 1)
+    Bias vector - numpy array with shape (1, n_y)
     """
 
     # num of units in previous layer is same as n_x
     w = np.random.randn(n_x, n_y) * np.sqrt(2 / n_x)
-    b = np.random.randn(n_y, 1) * np.sqrt(2 / n_x)
+    b = np.random.randn(1, n_y) * np.sqrt(2 / n_x)
 
     return w, b
 
@@ -153,11 +153,11 @@ def xavier_initializer(n_x, n_y):
 
     Returns:
     Weights matrix - numpy array with shape (n_x, n_y)
-    Bias vector - numpy array with shape (n_y, 1)
+    Bias vector - numpy array with shape (1, n_y)
     """
 
     # num of units in previous layer is same as n_x
     w = np.random.randn(n_x, n_y) * np.sqrt(1 / n_x)
-    b = np.random.randn(n_y, 1) * np.sqrt(1 / n_x)
+    b = np.random.randn(1, n_y) * np.sqrt(1 / n_x)
 
     return w, b
