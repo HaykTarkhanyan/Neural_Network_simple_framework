@@ -9,6 +9,36 @@ import numpy as np
 # https://www.coursera.org/learn/neural-networks-deep-learning/lecture/OASKH/
 # why-do-you-need-non-linear-activation-functions
 
+def activation_forward(z, activation_type):
+    """
+    Function performs activation step in forward prop, given input to
+    activation function and type of activation
+
+    Options for activ_type: "sigmoid", "tanh", "relu", "leaky_relu", "softmax"
+
+    Args:
+    z - numpy array or scalar
+    method - string("sigmoid", "tanh", "relu", "leaky_relu", "softmax")
+
+    Return:
+    returns numpy array or scalar, just as input
+    """
+
+    if activation_type.lower().startswith("sigm"):
+        a = sigmoid_forward(z)
+    elif activation_type.lower().startswith("tan"):
+        a = tanh_forward(z)
+    elif activation_type.lower().startswith("soft"):
+        a = softmax_forward(z)
+    elif activation_type.lower().startswith("re"):
+        a = relu_forward(z)
+    elif activation_type.lower().startswith("l"):
+        a = leaky_relu_forward(z)
+    else:
+        print ("Wrong input, perhaps issue is with the activation func name")
+
+    return a
+
 
 def sigmoid_forward(z):
     """
