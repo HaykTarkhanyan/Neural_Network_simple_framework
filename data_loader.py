@@ -10,11 +10,13 @@ def mean_variance_normalization(X):
 
     ARGS:
     X - numpy array
+    Returns:
+    X - numpy array
     """
     mean = np.mean(X)
     variance = np.std(X)
 
-    X = (X - mean) / variance
+    return (X - mean) / variance
 
 
 def load_data(path, output = True, normalize = True):
@@ -44,7 +46,7 @@ def load_data(path, output = True, normalize = True):
     y_train = labels.to_numpy()
 
     if normalize:
-        mean_variance_normalization(X_train)
+        X_train = mean_variance_normalization(X_train)
 
     if output:
         plt.scatter(X_train[:, 0], X_train[:, 1], c=y_train,
@@ -52,4 +54,5 @@ def load_data(path, output = True, normalize = True):
         plt.show()
 
     return X_train, y_train
+
 
